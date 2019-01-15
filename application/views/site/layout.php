@@ -5,7 +5,7 @@
 </head>
 <body>
     <a href="#" id="back_to_top">
-		<img src="<?php echo public_url()?>site/images/top.png">
+		<img src="<?php echo public_url()?>/site/images/top.png">
 	</a>
 
     <div class="wraper">
@@ -27,7 +27,7 @@
         </div>
 
         <center>
-			<img src="<?php echo public_url()?>site/images/bank.png"> 
+			<img src="<?php echo public_url()?>/site/images/bank.png"> 
 		</center>
 
         <div class="footer">

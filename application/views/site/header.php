@@ -1,7 +1,7 @@
 	<!-- The box-header-->
 			        
-<link type="text/css" href="<?php echo public_url()?>js/jquery/autocomplete/css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet">	
-<script type="text/javascript" src="<?php echo public_url()?>js/jquery/autocomplete/jquery-ui-1.8.16.custom.min.js"></script>
+<link type="text/css" href="<?php echo public_url()?>/js/jquery/autocomplete/css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet">	
+<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/autocomplete/jquery-ui-1.8.16.custom.min.js"></script>
 
 <script type="text/javascript">
     $(function() {
@@ -15,7 +15,7 @@
         <div id="logo">
     <!-- The Logo -->
         <a href="" title="Học lập trình website với PHP và MYSQL">
-	        <img src="<?php echo public_url()?>site/images/logo.jpg" alt="Học lập trình website với PHP và MYSQL">
+	        <img src="<?php echo public_url()?>/site/images/logo.jpg" alt="Học lập trình website với PHP và MYSQL">
 	    </a>
         </div>
     <!-- End logo -->
