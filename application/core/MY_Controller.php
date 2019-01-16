@@ -20,7 +20,18 @@
         }
         
         private function _check_login(){
-
+            $controller = $this->uri->rsegment(1);
+            $login = $this->session->userdata('login');
+            
+            //Neu chua dang nhap thi redirect ve trang dang nhap
+            if(!$login && $controller!='login'){
+                redirect(admin_url('login'));
+            }
+            
+            //Neu dang nhap roi nhung co tinh truy cap trang dang nhap thi redirect ve home
+            if($login && $controller == 'login'){
+                redirect(admin_url('home'));
+            }
         }
 
     }
