@@ -30,7 +30,11 @@
             if($this->admin_model->check_exists($where)){
                 return true;
             }
-            $this->form_validation->set_message(__FUNCTION__, 'Không thể đăng nhập');
+            $html = '<div class="alert alert-danger" role="alert">
+            <span class="alert-inner--icon"><i class="fas fa-exclamation-triangle"></i></span>
+            <span class="alert-inner--text">Không thể đăng nhập</span>
+            </div>';
+            $this->form_validation->set_message(__FUNCTION__, $html);
             return false;
         }
     }

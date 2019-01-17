@@ -1,19 +1,21 @@
 <html>
-    <head>
-        <?php $this->load->view('admin/head') ?>
-    </head>
-    
-    <body>
-        <div id="left_content">
-            <?php $this->load->view('admin/left') ?>
-        </div>
-        <div id="rightSide">
-            <?php $this->load->view('admin/header') ?>
+<head>
+    <?php $this->load->view('admin/head'); ?>
+</head>
 
-            <?php $this->load->view($temp, $this->data);?>
+<body>
+<!-- Left Side Bar -->
+<?php $this->load->view('admin/left'); ?>
+<!-- Main content -->
+<div class="main-content">
+<!-- Top Nav -->
+<?php $this->load->view('admin/top'); ?>
+<!-- Header -->
+<?php $this->load->view('admin/header'); ?>
+<!-- Page content -->
+<?php $this->load->view($temp, $this->data); ?>
+<!-- Footer -->
+<?php $this->load->view('admin/footer') ?>
+</body>
 
-            <?php $this->load->view('admin/footer') ?>
-        </div>
-        <div class="clear"></div>
-    </body>
 </html>

@@ -1,55 +1,16 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<title>Hocphp.info</title>
-
-<meta name="robots" content="noindex, nofollow" />
-
-<link rel="shortcut icon" href="<?php echo public_url('admin')?>/images/icon.png" type="image/x-icon"/>
-<link rel="stylesheet" type="text/css" href="<?php echo public_url('admin/crown')?>/css/main.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo public_url('admin')?>/css/css.css" media="screen" />
-
-
-<script type="text/javascript">
-	var admin_url 	= '';
-	var base_url 	= '';
-	var public_url 	= '';
-</script>
-
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/jquery-ui.min.js"></script>
-
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/spinner/jquery.mousewheel.js"></script>
-
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/forms/uniform.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/forms/jquery.tagsinput.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/forms/autogrowtextarea.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/forms/jquery.maskedinput.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/forms/jquery.inputlimiter.min.js"></script>
-
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/tables/datatable.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/tables/tablesort.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/tables/resizable.min.js"></script>
-
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.tipsy.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/s/plugins/ui/jquery.collapsible.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.progress.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.timeentry.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.colorpicker.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.jgrowl.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.breadcrumbs.js"></script>
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/plugins/ui/jquery.sourcerer.js"></script>
-
-<script type="text/javascript" src="<?php echo public_url('admin/crown')?>/js/custom.js"></script>
-
-
-<script type="text/javascript" src="<?php echo public_url()?>/js/ckeditor/ckeditor.js"></script> 
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/chosen/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/scrollTo/jquery.scrollTo.js"></script>
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/number/jquery.number.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/formatCurrency/jquery.formatCurrency-1.4.0.min.js"></script>
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/zclip/jquery.zclip.js"></script>
-
-<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/colorbox/jquery.colorbox.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo public_url()?>/js/jquery/colorbox/colorbox.css" media="screen" />
-
-<script type="text/javascript" src="<?php echo public_url()?>/js/custom_admin.js" type="text/javascript"></script>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+	<meta name="author" content="Creative Tim">
+	<title>Hệ thống quản trị <?php echo(isset($page_name)?$page_name:''); ?></title>
+	<!-- Favicon -->
+	<link href="<?php echo public_url('admin/argon'); ?>/assets/img/brand/favicon.png" rel="icon" type="image/png">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<!-- Icons -->
+	<link href="<?php echo public_url('admin/argon'); ?>/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+	<link href="<?php echo public_url('admin/argon'); ?>/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<!-- Argon CSS -->
+	<link type="text/css" href="<?php echo public_url('admin/argon'); ?>/assets/css/argon.css?v=1.0.0" rel="stylesheet">
+</head>
