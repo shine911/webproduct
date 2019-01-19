@@ -79,6 +79,7 @@ Class Catalog extends MY_Controller{
      */
 
     function add(){
+        $this->data['page_name'] = 'Quản lí danh mục sản phẩm';
         //Load library
         $this->load->library('form_validation');
         $this->load->helper('form');
@@ -94,7 +95,7 @@ Class Catalog extends MY_Controller{
                 //them vao csdl
                 $name = $this->input->post('name');
                 $parent_id = $this->input->post('parent_id');
-                $sort_id = $this->input->post('sort_order');
+                $sort_order = $this->input->post('sort_order');
                 $data = array(
                     'name' => $name,
                     'parent_id' => $parent_id,
