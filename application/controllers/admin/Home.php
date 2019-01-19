@@ -6,7 +6,7 @@
         }
         function index(){
             $this->data['temp'] = 'admin/home/index';
-            $this->data['page_name'] = '- Tổng quan';
+            $this->data['page_name'] = 'Tổng quan';
             $this->load->view('admin/main', $this->data);
         }
     }

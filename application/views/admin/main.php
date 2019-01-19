@@ -10,10 +10,10 @@
 <div class="main-content">
 <!-- Top Nav -->
 <?php $this->load->view('admin/top'); ?>
-<!-- Header -->
-<?php $this->load->view('admin/header'); ?>
 <!-- Page content -->
+<div class="container-fluid mt--7">
 <?php $this->load->view($temp, $this->data); ?>
+</div>
 <!-- Footer -->
 <?php $this->load->view('admin/footer') ?>
 </body>

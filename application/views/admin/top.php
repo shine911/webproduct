@@ -2,7 +2,7 @@
 <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
     <div class="container-fluid">
     <!-- Brand -->
-    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="<?php echo admin_url('home'); ?>"><?php echo substr($page_name, 2); ?></a>
+    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="<?php echo admin_url('home'); ?>"><?php echo $page_name; ?></a>
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex">
         <li class="nav-item dropdown">
@@ -35,3 +35,9 @@
     </ul>
     </div>
 </nav>
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+    <div class="header-body">
+    </div>
+    </div>
+</div>

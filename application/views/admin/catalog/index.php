@@ -1,77 +1,60 @@
-<?php
-    $this->load->view('admin/catalog/head', $this->data);
-?>
-
-<div class="line"></div>
-
-<div class="wrapper">
-	<div class="widget">
-	
-		<div class="title">
-			<span class="titleIcon"><input type="checkbox" id="titleCheck" name="titleCheck"></span>
-			<h6>Danh sách sản phẩm</h6>
-		    <div class="num f12">Tổng số: <b><?php echo count($list)?></b></div>
+<div class="row">
+    <div class="col">
+        <div class="card shadow">
+        <div class="card-header border-0">
+            <div class="row">
+                <div class="col"><h3 class="mb-0">Danh mục sản phẩm</h3></div>
+                <div class="col"><h3 class="mb-0 text-right">Tổng số: <?php echo $total; ?></h3></div>
+            </div>
+            
         </div>
-        
-        <table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable withCheck" id="checkAll">
-			<thead>
-				<tr>
-					<td style="width:10px;"><img src="<?php echo public_url('admin')?>/images/icons/tableArrows.png" /></td>
-                    <td style="width:80px;">Mã số</td>
-                    <td style="width:80px;">Thứ tự hiển thị</td>
-					<td>Tên danh mục</td>
-					<td style="width:100px;">Hành động</td>
-				</tr>
-			</thead>
-			<tfoot>
-				<tr>
-					<td colspan="7">
-					    <div class="list_action itemActions">
-								<a href="#submit" id="submit" class="button blueB" url="user/del_all.html">
-									<span style='color:white;'>Xóa hết</span>
-								</a>
-						</div>
-							
-					    <div class='pagination'>
-    		            </div>
-					</td>
-				</tr>
-			</tfoot>
-			<tbody>
-                <?php foreach($list as $row):?>
-            <tr>
-						<td><input type="checkbox" name="id[]" value="<?php echo $row->id?>" /></td>
-						
-						<td class="textC">
-                            <?php echo $row->id?>
-                        </td>
-
-						<td>
-                            <span title="<?php echo $row->sort_order?>" class="tipS">
-                                <?php echo $row->sort_order?>						
-                            </span>
-                        </td>
-						
-						
-						<td>
-                            <span title="<?php echo $row->name?>" class="tipS">
-                                <?php echo $row->name?>						
-                            </span>
-                        </td>
-											
-						<td class="option">
-							<a href="<?php echo admin_url('catalog/edit/'.$row->id); ?>" title="Chỉnh sửa" class="tipS ">
-							<img src="<?php echo public_url('admin')?>/images/icons/color/edit.png" />
-							</a>
-							
-							<a href="<?php echo admin_url('catalog/delete/'.$row->id); ?>" title="Xóa" class="tipS verify_action" >
-							    <img src="<?php echo public_url('admin')?>/images/icons/color/delete.png" />
-							</a>
-						</td>
-					</tr>
-                <?php endforeach;?>				
-			</tbody>
-		</table>
-
-	</div>
+        <div class="table-responsive">
+            <table class="table align-items-center">
+            <thead class="thead-light">
+                <tr>
+                <th scope="col">Mã số</th>
+                <th scope="col">Thứ tự</th>
+                <th scope="col">Tên danh mục</th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <form action="" method="post">
+            <?php foreach($list as $row): ?>
+                <tr>
+                <td class="custom-control custom-checkbox mb-3 text-center">
+                    <input class="custom-control-input" id="chkBox[]" name="chkBox[]" value="<?php echo $row->id?>" type="checkbox">
+                    <label class="custom-control-label" for="chkBox"><?php echo $row->id?></label>
+                </td>
+                <td class="text-center">
+                    <?php echo $row->sort_order?>
+                </td>
+                <td class="text-center">
+                    <?php echo $row->name?>	
+                </td>
+                <td class="text-right">
+                    <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(32px, 32px, 0px);">
+                        <a class="dropdown-item" href="#"><i class="fas fa-edit"></i>Chỉnh sửa</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i>Xóa</a>
+                    </div>
+                    </div>
+                </td>
+                </tr>
+            <?php endforeach; ?>
+            </form>
+            </tbody>
+            </table>
+        </div>
+        <div class="card-footer py-4">
+            <nav aria-label="...">
+                <?php echo $links; ?>
+            </nav>
+        </div>
+        </div>
+    </div>
+    </div>
 </div>
