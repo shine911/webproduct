@@ -16919,9 +16919,7 @@ a.text-lighter:focus
 
 .btn-icon-only
 {
-    width: 2.375rem;
-    height: 2.375rem;
-    padding: 0;
+    padding: 0.6rem;
 }
 
 a.btn-icon-only
