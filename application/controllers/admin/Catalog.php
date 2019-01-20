@@ -66,8 +66,10 @@ Class Catalog extends MY_Controller{
         $this->load->library('pagination', $config);
         $this->data['links'] = $this->pagination->create_links();
         //Lay noi dung bien message
+        $type= $this->session->flashdata('type');
         $message = $this->session->flashdata('message');
         $this->data['message'] = $message;
+        $this->data['type'] = $type;
         $this->data['temp'] = 'admin/catalog/index';
         $this->data['page_name'] = 'Quản lí danh mục sản phẩm';
         $this->data['list'] = $this->catalog_model->get_list($input);
@@ -103,9 +105,11 @@ Class Catalog extends MY_Controller{
                 );
 
                 if($this->catalog_model->create($data)){
-                    $this->session->set_flashdata('message', '<div style="color:green">Thêm danh mục thành công</div>');
+                    $this->session->set_flashdata('type', '0');
+                    $this->session->set_flashdata('message', 'Thêm danh mục thành công');
                 }
                 else{
+                    $this->session->set_flashdata('type', '1');
                     $this->session->set_flashdata('message', 'Đã xảy ra lỗi');
                 }
 
@@ -122,5 +126,91 @@ Class Catalog extends MY_Controller{
         $this->data['parent'] = $parent_id;
         $this->data['temp'] = 'admin/catalog/add';
         $this->load->view('admin/main', $this->data);
+    }
+
+    /**
+     * Chỉnh sửa danh mục
+     */
+    function edit(){
+        $this->data['page_name'] = 'Quản lí danh mục sản phẩm';
+        //Load library
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        $id = $this->uri->segment(4);
+        $info = $this->catalog_model->get_info($id);
+        if(!$info){
+            $this->session->set_flashdata('type', 1);
+            $this->session->set_flashdata('message', 'Danh mục không tồn tại');
+            redirect(admin_url('catalog'));
+        }
+        //neu co du lieu post len thi kiem tra
+        if($this->input->post()){
+            //Ten la bat buoc
+            $this->form_validation->set_rules('name', 'name', 'required');
+            //nhap lieu chinh xac
+            if($this->form_validation->run()){
+                //them vao csdl
+                $name = $this->input->post('name');
+                $parent_id = $this->input->post('parent_id');
+                $sort_order = $this->input->post('sort_order');
+                $data = array(
+                    'name' => $name,
+                    'parent_id' => $parent_id,
+                    'sort_order' => intval($sort_order)  
+                );
+
+                if($this->catalog_model->update($id, $data)){
+                    $this->session->set_flashdata('type', '0');
+                    $this->session->set_flashdata('message', 'Cập nhật danh mục thành công');
+                }
+                else{
+                    $this->session->set_flashdata('type', '1');
+                    $this->session->set_flashdata('message', 'Đã xảy ra lỗi');
+                }
+                redirect(admin_url('catalog'));
+            }
+        }
+            $input = array();
+            $input['where'] = array('parent_id' => 0);
+    
+            $parent_id = $this->catalog_model->get_list($input);
+            
+            $this->data['info'] = $info;
+            $this->data['parent'] = $parent_id;
+            $this->data['temp'] = 'admin/catalog/edit';
+            $this->load->view('admin/main', $this->data);
+    }
+    
+    /**
+     * Xóa dữ liệu
+     */
+    function delete(){
+        $id = $this->uri->segment(4);
+        $info = $this->catalog_model->get_info($id);
+        if(!$info){
+            $this->session->set_flashdata('type', 1);
+            $this->session->set_flashdata('message', 'Danh mục không tồn tại');
+            redirect(admin_url('catalog'));
+        }
+
+        if($this->catalog_model->delete($id)){
+            $this->session->set_flashdata('type', '0');
+            $this->session->set_flashdata('message', 'Xóa danh mục thành công');
+        }
+        else{
+            $this->session->set_flashdata('type', '1');
+            $this->session->set_flashdata('message', 'Đã xảy ra lỗi');
+        }
+        /**
+         * Cập nhật dữ liệu cho danh mục con
+         */
+
+        $input = array();
+        $input['where'] = array('parent_id' => $id);
+        $list = $this->catalog_model->get_list($input);
+        foreach($list as $row){
+            $this->catalog_model->delete($row->id);
+        }
+        redirect(admin_url('catalog'));
     }
 }
