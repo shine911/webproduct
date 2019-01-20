@@ -225,10 +225,11 @@ class MY_Model extends CI_Model {
 		}
 		
 		//tim kiem like
-		// $input['like'] = array('name' => 'abc');
+		// $input['like'] = array('name', 'abc');
 	    if ((isset($input['like'])) && $input['like'])
 		{
-			$this->db->like($input['like'][0], $input['like'][1]); 
+			$this->db->like($input['like'][0], $input['like'][1]);
+			//$this->db->like('name', 'LG'); 
 		}
 		
 		// Thêm sắp xếp dữ liệu thông qua biến $input['order'] 
