@@ -21,7 +21,7 @@ Class Catalog extends MY_Controller{
             $page_count++; //nếu thừa thì cộng thêm 1 trang
         }
         if($start==''){
-            $start = 0;
+            $start = 1;
         }
         /**
          * Làm đẹp cho phân trang
@@ -53,18 +53,17 @@ Class Catalog extends MY_Controller{
         //Kết thúc làm đẹp
         
         //Xét điều kiện ở bảng còn hay bảng thiếu, Bảng cuối cùng và còn thiếu
-        if($start==$page_count){
+        if($start==$page_count && $config['total_rows']%5!=0){
             $config['per_page'] = $config['total_rows']%5;
         }
 
-        if($start != 0){
-            $start = $start * 5 - 5;
-        }
+        $start = $start*5-5;
 
         $this->data['total'] = $config['total_rows'];
         $input['limit'] = array($config['per_page'], $start); 
         $this->load->library('pagination', $config);
         $this->data['links'] = $this->pagination->create_links();
+
         //Lay noi dung bien message
         $type= $this->session->flashdata('type');
         $message = $this->session->flashdata('message');
