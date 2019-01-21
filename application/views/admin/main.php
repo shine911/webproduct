@@ -10,6 +10,7 @@
 <div class="main-content">
 <!-- Top Nav -->
 <?php $this->load->view('admin/top'); ?>
+
 <!-- Page content -->
 <div class="container-fluid mt--7">
 <?php $this->load->view($temp, $this->data); ?>
