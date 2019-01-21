@@ -86,7 +86,8 @@ class Product extends MY_Controller{
          * Lấy danh sách
          */
         $keyword = $this->input->get('name');
-        $input['like'] = array('name', $keyword);
+        $input = array();
+        $input['like'] = array('name' => $keyword);
         if(!$keyword){
             $this->session->set_flashdata('type', 1);
             $this->session->set_flashdata('message', 'Không tìm thấy sản phẩm');
@@ -175,6 +176,49 @@ class Product extends MY_Controller{
         $this->data['temp'] = 'admin/product/index';
         $this->data['page_name'] = 'Quản lí sản phẩm';
         $this->data['list'] = $list;
+        $this->load->view('admin/main', $this->data);
+    }
+
+    /**
+     * Thêm sản phẩm
+     */
+    function add(){
+        $this->data['page_name'] = 'Thêm sản phẩm';
+        //Load library
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        
+        //neu co du lieu post len thi kiem tra
+        
+        if($this->input->post()){
+            //Ten la bat buoc
+            $this->form_validation->set_rules('name', 'name', 'required');
+
+            //nhap lieu chinh xac
+            if($this->form_validation->run()){
+                //them vao csdl
+                $name = $this->input->post('name');
+                $parent_id = $this->input->post('parent_id');
+                $sort_order = $this->input->post('sort_order');
+                $data = array(
+                    'name' => $name,
+                    'parent_id' => $parent_id,
+                    'sort_order' => intval($sort_order)  
+                );
+
+                if($this->catalog_model->create($data)){
+                    $this->session->set_flashdata('type', '0');
+                    $this->session->set_flashdata('message', 'Thêm danh mục thành công');
+                }
+                else{
+                    $this->session->set_flashdata('type', '1');
+                    $this->session->set_flashdata('message', 'Đã xảy ra lỗi');
+                }
+
+                redirect(admin_url('catalog'));
+            }
+        }
+        $this->data['temp'] = 'admin/product/add';
         $this->load->view('admin/main', $this->data);
     }
 }

@@ -35,3 +35,8 @@
 <script src="<?php echo public_url('admin/argon'); ?>/assets/vendor/chart.js/dist/Chart.extension.js"></script>
 <!-- Argon JS -->
 <script src="<?php echo public_url('admin/argon'); ?>/assets/js/argon.js?v=1.0.0"></script>
+<!-- Rich Text Editor Minimal JS -->
+<script src="<?php echo public_url('admin/argon'); ?>/assets/js/jquery.richtext.min.js"></script>
+<script>
+        $('.content').richText();
+</script>

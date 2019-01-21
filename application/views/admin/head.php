@@ -13,4 +13,6 @@
 	<link href="<?php echo public_url('admin/argon'); ?>/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 	<!-- Argon CSS -->
 	<link type="text/css" href="<?php echo public_url('admin/argon'); ?>/assets/css/argon.css" rel="stylesheet">
+	<!-- JQuery Rich Text Editor Minimal -->
+	<link href="<?php echo public_url('admin/argon'); ?>/assets/css/richtext.min.css" rel="stylesheet">
 </head>
