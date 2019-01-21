@@ -34,8 +34,17 @@
     <label for="price" class="col-sm-2 col-form-label">Thể loại: * </label>
     <div class="col-sm-6">
         <select name="catalog" id="param_catalog" class="custom-select">
-            <option value="1">Ex1</option>
-            <option value="2">Ex2</option>
+            <?php foreach($catalogs as $row): 
+                    if(count($row->subs)>0):
+            ?>
+                <optgroup label="<?php echo $row->name ?>">
+                <?php foreach($row->subs as $sub): ?>
+                    <option value="<?php echo $sub->id ?>" <?php echo $this->input->get('catalog') == $sub->id?'selected':'' ?> ><?php echo $sub->name; ?></option>
+                <?php endforeach; 
+                else:?>
+                <option value="<?php echo $row->id ?>" <?php echo $this->input->get('catalog') == $row->id?'selected':'' ?> ><?php echo $row->name; ?></option>
+            <?php   endif;
+                    endforeach; ?>
         </select>
     </div>
 </div>

@@ -9,8 +9,8 @@
         </div>
         </div>
     </div>
-    <div class="card-body">
-        <form method="post" action="">
+    <div class="card-body bg-white">
+        <form method="post" action="" enctype="multipart/form-data">
         <div class="pl-lg-4">
             <nav>
             <div class="nav nav-tabs mb-4" id="nav-tab" role="tablist">

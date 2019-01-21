@@ -188,8 +188,18 @@ class Product extends MY_Controller{
         $this->load->library('form_validation');
         $this->load->helper('form');
         
+        //lay danh sach danh muc san pham
+        $this->load->model('catalog_model');
+        $input = array();
+        $input['where'] = array('parent_id' => 0);
+        $catalogs = $this->catalog_model->get_list($input);
+        foreach ($catalogs as $row)
+        {
+            $input['where'] = array('parent_id' => $row->id);
+            $subs = $this->catalog_model->get_list($input);
+            $row->subs = $subs;
+        }
         //neu co du lieu post len thi kiem tra
-        
         if($this->input->post()){
             //Ten la bat buoc
             $this->form_validation->set_rules('name', 'name', 'required');
@@ -218,6 +228,7 @@ class Product extends MY_Controller{
                 redirect(admin_url('catalog'));
             }
         }
+        $this->data['catalogs'] = $catalogs;
         $this->data['temp'] = 'admin/product/add';
         $this->load->view('admin/main', $this->data);
     }
