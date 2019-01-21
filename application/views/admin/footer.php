@@ -35,8 +35,20 @@
 <script src="<?php echo public_url('admin/argon'); ?>/assets/vendor/chart.js/dist/Chart.extension.js"></script>
 <!-- Argon JS -->
 <script src="<?php echo public_url('admin/argon'); ?>/assets/js/argon.js?v=1.0.0"></script>
+
 <!-- Rich Text Editor Minimal JS -->
 <script src="<?php echo public_url('admin/argon'); ?>/assets/js/jquery.richtext.min.js"></script>
+<!-- Plugin JS -->
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/jquery/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/jquery/scrollTo/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/jquery/number/jquery.number.min.js"></script>
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/jquery/formatCurrency/jquery.formatCurrency-1.4.0.min.js"></script>
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/jquery/zclip/jquery.zclip.js"></script>
+
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/jquery/colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo public_url(''); ?>js/jquery/colorbox/colorbox.css" media="screen" />
+
+<script type="text/javascript" src="<?php echo public_url(''); ?>js/custom_admin.js" type="text/javascript"></script>
 <script>
         $('.content').richText();
 </script>

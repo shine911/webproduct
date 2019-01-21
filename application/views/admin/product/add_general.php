@@ -13,20 +13,20 @@
 <div class="form-group row">
     <label for="image" class="col-sm-2 col-form-label">Ảnh kèm theo: </label>
     <div class="col-sm-6">
-        <input type="file" name="images[]" id="param_images" class="form-control-file">
+        <input type="file" name="image_list[]" id="param_image_list" class="form-control-file" multiple>
     </div>
 </div>
 <hr class="my-4">
 <div class="form-group row">
     <label for="price" class="col-sm-2 col-form-label">Giá: * </label>
     <div class="col-sm-6">
-        <input type="text" name="price" id="param_price" class="form-control">
+        <input type="text" _autocheck="true" name="price" id="param_price" class="form-control format_number">
     </div>
 </div>
 <div class="form-group row">
     <label for="price" class="col-sm-2 col-form-label">Giảm giá: </label>
     <div class="col-sm-6">
-        <input type="text" name="price" id="param_discount" class="form-control">
+        <input type="text" _autocheck="true" name="price" id="param_discount" class="form-control format_number">
     </div>
 </div>
 <hr class="my-4">
