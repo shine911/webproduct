@@ -88,9 +88,18 @@ class Product extends MY_Controller{
         $keyword = $this->input->get('name');
         $input['like'] = array('name', $keyword);
         if(!$keyword){
-            redirect('admin/catalog');
+            $this->session->set_flashdata('type', 1);
+            $this->session->set_flashdata('message', 'Không tìm thấy sản phẩm');
+            redirect('admin/product');
         }
         $list = $this->product_model->get_list($input);
+
+        if(count($list)==0){
+            //Lay noi dung bien message
+            $this->session->set_flashdata('type', 1);
+            $this->session->set_flashdata('message', 'Không tìm thấy sản phẩm');
+            redirect(admin_url('product/search'));
+        }
 
         /**
          * Phân trang dữ liệu

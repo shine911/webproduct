@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form class="form mb-0" method="get" action="product/search">
+                    <form class="form mb-0" method="get" action="<?php echo admin_url('product/search/') ?>">
                     <div class="form-group mb-0">
                     <div class="input-group">
                         <div class="input-group-prepend">

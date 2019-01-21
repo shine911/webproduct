@@ -17,7 +17,12 @@
     <ul class="navbar-nav mb-md-3">
         <li class="nav-item">
         <a class="nav-link" href="<?php echo admin_url('catalog'); ?>">
-            <i class="ni ni-bullet-list-67"></i> Danh mục sản phẩm
+            <i class="ni ni-collection text-blue"></i> Danh mục
+        </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<?php echo admin_url('product'); ?>">
+            <i class="ni ni-shop text-blue"></i> Sản phẩm
         </a>
         </li>
     </ul>
