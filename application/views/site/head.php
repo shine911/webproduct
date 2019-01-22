@@ -1,52 +1,53 @@
-        <meta http-equiv="Content-Type" content="text/html ;charset=utf-8" />
+
+        <meta content="text/html ;charset=utf-8" http-equiv="Content-Type">
         <!-- the CSS -->
-        <link type="text/css" href="<?php echo public_url()?>/site/css/reset.css" rel="stylesheet" />
-        <link type="text/css" href="<?php echo public_url()?>/site/css/style.css" rel="stylesheet" />
-        <link type="text/css" href="<?php echo public_url()?>/site/css/menu.css" rel="stylesheet" />
-        <link type="text/css" href="<?php echo public_url()?>/site/css/input.css" rel="stylesheet" />
-        <link type="text/css" href="<?php echo public_url()?>/site/css/product.css" rel="stylesheet" />
-        <link type="text/css" href="<?php echo public_url()?>/site/css/slide-flim.css" rel="stylesheet" />
+        <link rel="stylesheet" href="<?php echo public_url()?>/site/css/reset.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo public_url()?>/site/css/style.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo public_url()?>/site/css/menu.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo public_url()?>/site/css/input.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo public_url()?>/site/css/product.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo public_url()?>/site/css/slide-flim.css" type="text/css">
         <!-- End CSS -->
         
         <!-- the Javascript -->
-    
-        <script type="text/javascript" src="<?php echo public_url()?>/js/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="<?php echo public_url()?>/js/jquery/jquery-ui.min.js"></script>
-		<link rel="stylesheet" href="<?php echo public_url()?>/js/jquery/jquery-ui/custom-theme/jquery-ui-1.8.21.custom.css" type="text/css">
+      
+        <script src="<?php echo public_url()?>/js/jquery/jquery.min.js" type="text/javascript"></script>
+		<script src="<?php echo public_url()?>/js/jquery/jquery-ui.min.js" type="text/javascript"></script>
+		<link type="text/css" href="<?php echo public_url()?>/js/jquery/jquery-ui/custom-theme/jquery-ui-1.8.21.custom.css" rel="stylesheet">
 	    
         <script src="<?php echo public_url()?>/site/js/script.js"></script>
         
         <!-- raty -->
-		<script type="text/javascript" src="<?php echo public_url()?>/site/raty/jquery.raty.min.js"></script>
-		<script type="text/javascript">
-	    $(function() {
-	        $.fn.raty.defaults.path = '<?php echo public_url()?>/site/raty/img';
-	        $('.raty').raty({
-	    	score: function() {
-	        	return $(this).attr('data-score');
-	    	},
-	            readOnly  : true,
-	        });
-	    });
-	    </script>
-	    <style>.raty img{width:16px !important;height:16px; !important;}</style>
-	    <!--End raty -->
-    
+		 <script src="<?php echo public_url()?>/site/raty/jquery.raty.min.js" type="text/javascript"></script>
+		 <script type="text/javascript">
+	      $(function() {
+	         $.fn.raty.defaults.path = '<?php echo public_url()?>/site/raty/img';
+	         $('.raty').raty({
+	          	  score: function() {
+	          	    return $(this).attr('data-score');
+	          	  },
+	              readOnly  : true,
+	          });
+	      });
+	     </script>
+	     <style>.raty img{width:16px !important;height:16px; !important;}</style>
+	     <!--End raty -->
+     
         <!-- End Javascript -->
         <script type="text/javascript">
-	    $(document).ready(function(){
+	        $(document).ready(function(){
 		        $('#back_to_top').click(function() {
 		            $('html, body').animate({scrollTop:0},"slow");
-		    });
-			// go top
-		    $(window).scroll(function() {
+		       });
+		       // go top
+		       $(window).scroll(function() {
 		            if($(window).scrollTop() != 0) {
 		                $('#back_to_top').fadeIn();
 		            } else {
 		                $('#back_to_top').fadeOut();
 		            }
-		    });
-	    });
+		       });
+	        });
 		</script>
 		<style>
 		#back_to_top {
@@ -61,5 +62,6 @@
 		    width: auto;
 		}
 		</style>
+		<title>Argon Store - Thiên đường mua sắm</title>  
 		
-		        <title>Học lập trình website với PHP và MYSQL</title>
+		

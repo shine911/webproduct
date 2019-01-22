@@ -1,8 +1,7 @@
-<!-- lay slide -->
-<script src="<?php echo public_url()?>site/royalslider/jquery.royalslider.min.js"></script>
-<link type="text/css" href="<?php echo public_url()?>site/royalslider/royalslider.css" rel="stylesheet">
-<link type="text/css" href="<?php echo public_url()?>site/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
-
+ <!-- lay slide -->
+<script src="<?php echo public_url()?>/site/royalslider/jquery.royalslider.min.js"></script>
+<link type="text/css" href="<?php echo public_url()?>/site/royalslider/royalslider.css" rel="stylesheet">
+<link type="text/css" href="<?php echo public_url()?>/site/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
 
 <script type="text/javascript">
 (function($)
@@ -34,8 +33,6 @@
 	});
 })(jQuery);
 </script>
-
-
 <style>
 #HomeSlide.royalSlider {
 	width: 580px;	
@@ -47,11 +44,13 @@
 <div id='slide'>
 	<div id="img-slide" class="sliderContainer" style='width:580px'>
 		<div id="HomeSlide" class="royalSlider rsMinW">
-		    <a href="http://dantri.com.vn/" target='_blank'><img src="<?php echo base_url()?>/upload/slide/31.jpg" /> </a>
-		    <a href="http://dantri.com.vn/" target='_blank'><img src="<?php echo base_url()?>/upload/slide/21.jpg" /> </a>
-		    <a href="http://dantri.com.vn/" target='_blank'><img src="<?php echo base_url()?>/upload/slide/11.jpg" /> </a>
+		        <?php foreach ($slide_list as $row):?>
+		      	   <a href="<?php echo $row->link?>" target='_blank'>
+		      	        <img src="<?php echo base_url('upload/slide/'.$row->image_link)?>" alt="<?php echo $row->name?>"/> 
+		      	   </a>
+		      	<?php endforeach;?>	      
 		</div>
 	</div>
 	<div class="clear"></div>
 </div>
-<div class="clear pb20"></div> 
+<div class="clear pb20"></div>  
